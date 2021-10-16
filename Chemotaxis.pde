@@ -30,7 +30,7 @@ void setup() {
 }
 
 void draw() {
-  background(255);
+  
 
   update(mouseX, mouseY);
 
