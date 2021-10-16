@@ -17,7 +17,7 @@ int rectX, rectY, rectSizeX, rectSizeY;
 Cake yum;
 
 Walker bob;
-Walker[] walkers = new Walker[100];
+Walker[]walkers = new Walker[100];
 
 
 void setup() {
