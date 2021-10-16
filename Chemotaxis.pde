@@ -31,7 +31,8 @@ void setup() {
 
 void draw() {
   
-
+  background (255); 
+   
   update(mouseX, mouseY);
 
   v.lerp(cakeX, cakeY, 0.0, 0.1);
