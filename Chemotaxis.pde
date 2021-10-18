@@ -33,7 +33,8 @@ void draw() {
 
   background (255); 
 
-  v.lerp(cakeX, cakeY, 0.0, 0.1);
+//  v.lerp(cakeX, cakeY, 0.0, 0.1);
+
   yum = new Cake ((int)Cx, (int)Cy);
 
   Cx = (1-easing) * oldx + easing * cakeX;
@@ -174,3 +175,21 @@ class Cake {
     line (myX+10, myY-10, myX+10, myY-5);
   }
 }
+/*
+void update(int x, int y) {
+  if (overRect(rectX, rectY, rectSizeX, rectSizeY) ) {
+    rectOver = true;
+  } else {
+    rectOver = false;
+  }
+}
+
+boolean overRect(int x, int y, int width, int height) {
+  if (mouseX >= x && mouseX <= x+width &&
+    mouseY >= y && mouseY <= y+height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+*/
