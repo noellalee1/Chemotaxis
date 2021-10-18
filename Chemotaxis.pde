@@ -30,13 +30,11 @@ void setup() {
 }
 
 void draw() {
-  
+
   background (255); 
-   
-  update(mouseX, mouseY);
 
   v.lerp(cakeX, cakeY, 0.0, 0.1);
-  yum = new Cake (Cx, Cy, oldCakeX, oldCakeY);
+  yum = new Cake ((int)Cx, (int)Cy, (int)oldCakeX, (int)oldCakeY);
 
   Cx = (1-easing) * oldx + easing * cakeX;
   Cy = (1-easing) * oldy + easing * cakeY;
@@ -58,12 +56,8 @@ void draw() {
   strokeWeight(2); //window middle
   line (250, 115, 250, 325);
 
-
-
-
-
   for (int i = 0; i < walkers.length; i++) {
-    walkers[i] = new Walker(x, y);
+    walkers[i] = new Walker((int)x, (int)y);
   }
 
   for (int i = 0; i < walkers.length; i++) {
@@ -86,37 +80,20 @@ void draw() {
   oldCakeX = Cx;
   oldCakeY = Cy;
 
- 
-if (open == false){
-  yum.show();
-   stroke (237, 67, 55); //arrow line
-  strokeWeight(2);
-   line (Cx+10, Cy+10, mouseX, mouseY);
-   
-}
-  if (rectOver){
-  if (mousePressed == true) {
-    if (mouseButton == LEFT) {
+  update(mouseX, mouseY);
+
+  if (open == false) {
+    yum.show();
+    stroke (237, 67, 55); //arrow line
+    strokeWeight(2);
+    line (Cx+10, Cy+10, mouseX, mouseY);
+  }
+  if (rectOver) {
+    if (mousePressed == true) {
+      if (mouseButton == LEFT) {
         open = true;
-    
+      }
     }
-  }
-  }
-  
-  if (open == true){
-    fill (255, 0, 0);
-      textSize (50);
-      textAlign (CENTER);
-      text ("Oh no,", 250, 40);
-      text (" the bugs ate the cake", 250, 90);
-      text (";-;", 250, 400);
-  } else {
-     fill (0, 0, 0);
-      textSize (50);
-      textAlign (CENTER);
-      text ("Click the", 250, 40);
-      text (" right window to open", 250, 90);
-      text (":)", 250, 400);
   }
 }
 
@@ -130,12 +107,11 @@ void mousePressed () {
     cakeX = mouseX;
     cakeY = mouseY;
   }
-  
 }
 
 class Walker {
-  float myX, myY;
-  Walker (float x, float y) {
+  int myX, myY;
+  Walker (int x, int y) {
     myX = x;
     myY = y;
   }
@@ -169,8 +145,8 @@ class Walker {
 }
 
 class Cake {
-  float myX, myY, myOldX, myOldY;
-  Cake (float x, float y, float oldx, float oldy) {
+  int myX, myY, myOldX, myOldY;
+  Cake (int x, int y, int oldx, int oldy) {
     myX = x;
     myY = y;
     myOldX = oldx;
@@ -197,14 +173,5 @@ void update(int x, int y) {
     rectOver = true;
   } else {
     rectOver = false;
-  }
-}
-
-boolean overRect(int x, int y, int width, int height) {
-  if (mouseX >= x && mouseX <= x+width &&
-    mouseY >= y && mouseY <= y+height) {
-    return true;
-  } else {
-    return false;
   }
 }
