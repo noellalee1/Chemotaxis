@@ -79,7 +79,7 @@ void draw() {
   oldCakeX = Cx;
   oldCakeY = Cy;
 
-//  update(mouseX, mouseY);
+  update(mouseX, mouseY);
 
   if (open == false) {
     yum.show();
@@ -173,7 +173,7 @@ class Cake {
     line (myX+10, myY-10, myX+10, myY-5);
   }
 }
-/*
+
 void update(int x, int y) {
   if (overRect(rectX, rectY, rectSizeX, rectSizeY) ) {
     rectOver = true;
@@ -190,4 +190,4 @@ boolean overRect(int x, int y, int width, int height) {
     return false;
   }
 }
-*/
+
