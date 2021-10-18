@@ -98,8 +98,8 @@ void draw() {
     fill (255, 0, 0);
     textSize (50);
     textAlign (CENTER);
-    text ("Oh no,", 250, 40);
-    text (" the bugs ate the cake", 250, 90);
+   //text ("Oh no,", 250, 40);
+    text ("The bugs ate the cake", 250, 90);
     text (";-;", 250, 400);
   }
 }
