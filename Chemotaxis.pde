@@ -34,7 +34,7 @@ void draw() {
   background (255); 
 
   v.lerp(cakeX, cakeY, 0.0, 0.1);
-  yum = new Cake ((int)Cx, (int)Cy, (int)oldCakeX, (int)oldCakeY);
+  yum = new Cake ((int)Cx, (int)Cy);
 
   Cx = (1-easing) * oldx + easing * cakeX;
   Cy = (1-easing) * oldy + easing * cakeY;
@@ -118,47 +118,46 @@ void mousePressed () {
 }
 
 class Walker {
-  int myX, myY;
-  Walker (int x, int y) {
-    myX = x;
-    myY = y;
+  int myXwalk, myYwalk;
+  Walker (int xWalk, int yWalk) {
+    myXwalk =xWalk;
+    myYwalk = yWalk;
   }
   void walk() {
-    myX = myX + (int)(Math.random()*100)-50;
-    myY = myY + (int)(Math.random()*100)-50;
+    myXwalk = myXwalk + (int)(Math.random()*100)-50;
+    myYwalk = myYwalk + (int)(Math.random()*100)-50;
   }
   void show() {
     fill (255, 224, 84);
     noStroke();
     if (open == false) {
-      if (myX > 430 ) {
-        myX = 430;
-      } else if (myX < 70) {
-        myX = 70;
+      if (myXwalk > 430 ) {
+        myXwalk = 430;
+      } else if (myXwalk < 70) {
+        myXwalk = 70;
       }
-      if (myY > 320 ) {
-        myY = 320;
-      } else if (myY < 120) {
-        myY = 120;
+      if (myYwalk > 320 ) {
+        myYwalk = 320;
+      } else if (myYwalk < 120) {
+        myYwalk = 120;
       }
     } else {
     }
 
     noStroke();
-    ellipse (myX, myY, 5, 5);
+    ellipse (myXwalk, myYwalk, 5, 5);
     stroke (0);
     strokeWeight(1);
-    ellipse (myX+1, myY+1, .5, .5);
+    ellipse (myXwalk+1, myYwalk+1, .5, .5);
   }
 }
 
 class Cake {
   int myX, myY, myOldX, myOldY;
-  Cake (int x, int y, int oldx, int oldy) {
-    myX = x;
-    myY = y;
-    myOldX = oldx;
-    myOldY = oldy;
+  Cake (int xCake, int yCake) {
+    myX = xCake;
+    myY = yCake;
+   
   }
   void show() {
     noStroke();
