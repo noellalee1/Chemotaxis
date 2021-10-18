@@ -2,7 +2,7 @@ float x, y;
 float newx, newy;
 float oldx, oldy;
 float easing = 0.1; // determines movement speed
-PVector v;
+
 
 float cakeX, cakeY;
 float Cx, Cy;
@@ -26,14 +26,12 @@ void setup() {
   noStroke();
   fill(0);
 
-  v = new PVector (0.0, 0.0);
+
 }
 
 void draw() {
 
   background (255); 
-
-//  v.lerp(cakeX, cakeY, 0.0, 0.1);
 
   yum = new Cake ((int)Cx, (int)Cy);
 
