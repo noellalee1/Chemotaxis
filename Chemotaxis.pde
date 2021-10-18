@@ -80,7 +80,7 @@ void draw() {
   oldCakeX = Cx;
   oldCakeY = Cy;
 
-  update(mouseX, mouseY);
+//  update(mouseX, mouseY);
 
   if (open == false) {
     yum.show();
@@ -94,6 +94,14 @@ void draw() {
         open = true;
       }
     }
+  }
+  if (open == true) {
+    fill (255, 0, 0);
+    textSize (50);
+    textAlign (CENTER);
+    text ("Oh no,", 250, 40);
+    text (" the bugs ate the cake", 250, 90);
+    text (";-;", 250, 400);
   }
 }
 
@@ -167,7 +175,7 @@ class Cake {
     line (myX+10, myY-10, myX+10, myY-5);
   }
 }
-
+/*
 void update(int x, int y) {
   if (overRect(rectX, rectY, rectSizeX, rectSizeY) ) {
     rectOver = true;
@@ -175,3 +183,13 @@ void update(int x, int y) {
     rectOver = false;
   }
 }
+
+boolean overRect(int x, int y, int width, int height) {
+  if (mouseX >= x && mouseX <= x+width &&
+    mouseY >= y && mouseY <= y+height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+*/
