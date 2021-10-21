@@ -66,6 +66,7 @@ void draw() {
     walkers[i].show();
   }
 
+  if (open == false){
   strokeWeight(5); //moving window
   stroke (143, 88, 0);
   noFill();
@@ -74,6 +75,7 @@ void draw() {
   rectSizeX = 185;
   rectSizeY = 210;
   rect (rectX, rectY, rectSizeX, rectSizeY);
+  }
 
   oldx = x;
   oldy = y;
@@ -105,6 +107,12 @@ void draw() {
     text (";-;", 250, 400);
     textSize(20);
     text ("based on true events", 250, 450);
+    /*
+    fill(255);
+    stroke(255);
+    strokeWeight(1);
+    ellipse(339, 228, 40, 40);
+    */
   }
 }
 
