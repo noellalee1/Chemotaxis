@@ -33,7 +33,7 @@ void draw() {
 
   background (255); 
 
-//  v.lerp(cakeX, cakeY, 0.0, 0.1);
+  //  v.lerp(cakeX, cakeY, 0.0, 0.1);
 
   yum = new Cake ((int)Cx, (int)Cy);
 
@@ -97,12 +97,14 @@ void draw() {
     }
   }
   if (open == true) {
-    fill (255, 0, 0);
+    fill (0, 0, 0);
     textSize (50);
     textAlign (CENTER);
     text ("The bugs ate", 250, 40);
     text (" the cake", 250, 90);
     text (";-;", 250, 400);
+    textSize(20);
+    text ("based on true events", 250, 450);
   }
 }
 
@@ -158,7 +160,6 @@ class Cake {
   Cake (int xCake, int yCake) {
     myX = xCake;
     myY = yCake;
-   
   }
   void show() {
     noStroke();
